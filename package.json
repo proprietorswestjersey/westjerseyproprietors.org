@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "eleventy",
-    "start": "eleventy --incremental --serve"
+    "fix": "prettier --cache --write '*.{md,js}' 'src/**/*'",
+    "start": "eleventy --incremental --serve",
+    "test": "prettier --cache --check '*.{md,js}' 'src/**/*'"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0-alpha.13"
+    "@11ty/eleventy": "^3.0.0-alpha.13",
+    "prettier": "^3.3.2"
   }
 }

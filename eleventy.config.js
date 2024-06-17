@@ -1,7 +1,7 @@
 export default function (eleventyConfig) {
-    return {
-        dir: {
-            input: "src"
-        }
-    }
+  return {
+    dir: {
+      input: "src",
+    },
+  };
 }
