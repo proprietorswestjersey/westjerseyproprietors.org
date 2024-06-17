@@ -1,0 +1,12 @@
+{
+  "name": "westjerseyproprietors.org",
+  "description": "West Jersey Proprietors Website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0-alpha.13"
+  }
+}
