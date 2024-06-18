@@ -1,2 +1,3 @@
 _site/
+.wireit/
 node_modules/
