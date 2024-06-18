@@ -1,0 +1,62 @@
+{
+  "name": "westjerseyproprietors.org",
+  "description": "West Jersey Proprietors Website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "wireit",
+    "fix": "prettier --cache --write '*.{md,js}' 'src/**/*'",
+    "start": "wireit",
+    "test": "prettier --cache --check '*.{md,js}' 'src/**/*'"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0-alpha.13",
+    "prettier": "^3.3.2",
+    "tailwindcss": "^3.4.4",
+    "wireit": "^0.14.4"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "build:eleventy",
+        "build:tailwind"
+      ]
+    },
+    "build:eleventy": {
+      "command": "eleventy",
+      "files": [
+        "eleventy.config.js",
+        "src/**/*.js",
+        "src/**/*.md",
+        "src/**/*.yml"
+      ],
+      "output": [
+        "_site/**/*.html"
+      ]
+    },
+    "build:tailwind": {
+      "command": "tailwindcss --output _site/main.css",
+      "files": [
+        "tailwind.config.js",
+        "src/**/*.js"
+      ],
+      "output": [
+        "_site/main.css"
+      ]
+    },
+    "start": {
+      "dependencies": [
+        "start:eleventy",
+        "start:tailwind"
+      ]
+    },
+    "start:eleventy": {
+      "command": "eleventy --incremental --serve",
+      "service": true
+    },
+    "start:tailwind": {
+      "command": "tailwindcss --output _site/main.css --watch",
+      "service": true
+    }
+  }
+}
