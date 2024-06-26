@@ -1,4 +1,9 @@
-export default function (data) {
+export interface BaseLayoutData {
+  readonly title: string;
+  readonly content: string;
+}
+
+export default function (data: BaseLayoutData) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>

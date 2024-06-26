@@ -1,6 +1,6 @@
 ---
 title: West Jersey Proprietors
-layout: base.11ty.js
+layout: base.11ty.ts
 ---
 
 # West Jersey Proprietors

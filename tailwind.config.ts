@@ -1,9 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
-    "src/**/*.js"
-  ],
+  content: ["src/**/*.js"],
   theme: {
     extend: {},
   },
