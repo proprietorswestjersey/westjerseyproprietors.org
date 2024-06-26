@@ -5,14 +5,23 @@
   "type": "module",
   "scripts": {
     "build": "wireit",
-    "fix": "prettier --cache --write '*.{md,js}' 'src/**/*'",
+    "fix": "prettier --cache --write '*.{md,js,ts}' 'src/**/*'",
     "start": "wireit",
-    "test": "prettier --cache --check '*.{md,js}' 'src/**/*'"
+    "test": "prettier --cache --check '*.{md,js,ts}' 'src/**/*'"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-alpha.13",
+    "@tailwindcss/typography": "^0.5.13",
+    "@tsconfig/node22": "^22.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.4",
+    "tsx": "^4.15.6",
+    "typescript": "^5.4.5",
     "wireit": "^0.14.4"
   },
   "wireit": {
@@ -23,11 +32,12 @@
       ]
     },
     "build:eleventy": {
-      "command": "eleventy",
+      "command": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
       "files": [
-        "eleventy.config.js",
-        "src/**/*.js",
+        "eleventy.config.ts",
         "src/**/*.md",
+        "src/**/*.ts",
+        "src/**/*.tsx",
         "src/**/*.yml"
       ],
       "output": [
@@ -37,8 +47,8 @@
     "build:tailwind": {
       "command": "tailwindcss --output _site/main.css",
       "files": [
-        "tailwind.config.js",
-        "src/**/*.js"
+        "tailwind.config.ts",
+        "src/**/*.tsx"
       ],
       "output": [
         "_site/main.css"
@@ -51,12 +61,17 @@
       ]
     },
     "start:eleventy": {
-      "command": "eleventy --incremental --serve",
+      "command": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --incremental --serve",
       "service": true
     },
     "start:tailwind": {
       "command": "tailwindcss --output _site/main.css --watch",
       "service": true
     }
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }
