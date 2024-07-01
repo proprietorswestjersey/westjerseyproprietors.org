@@ -1,6 +1,3 @@
-import { ReactNode } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
-
 export interface EleventyConfigOptions {
   readonly dir?: {
     readonly input?: string;
@@ -16,10 +13,6 @@ export interface EleventyConfigExtensionContext {
 
 export interface EleventyConfigExtensionOptions {
   readonly key: string;
-  compile(): (
-    this: EleventyConfigExtensionContext,
-    data: unknown,
-  ) => Promise<string>;
 }
 
 export interface EleventyConfig {
@@ -32,14 +25,8 @@ export interface EleventyConfig {
 export default function (
   eleventyConfig: EleventyConfig,
 ): EleventyConfigOptions {
-  eleventyConfig.addExtension(["11ty.tsx"], {
+  eleventyConfig.addExtension(["11ty.tsx", "11ty.ts"], {
     key: "11ty.js",
-    compile() {
-      return async function (data) {
-        const content = await this.defaultRenderer<unknown, ReactNode>(data);
-        return renderToStaticMarkup(content);
-      };
-    },
   });
   return {
     dir: {
