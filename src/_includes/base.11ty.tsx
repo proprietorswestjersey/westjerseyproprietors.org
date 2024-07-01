@@ -1,9 +1,15 @@
+import type { ReactNode } from "react";
+
 export interface BaseLayoutData {
   readonly title: string;
   readonly content: string;
 }
 
-export default function (data: BaseLayoutData) {
+export const data = {
+  layout: "html.11ty.ts",
+};
+
+export function render(data: BaseLayoutData): ReactNode {
   return (
     <html lang="en">
       <head>
