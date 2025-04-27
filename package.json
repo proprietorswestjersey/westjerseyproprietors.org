@@ -4,74 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "wireit",
-    "fix": "prettier --cache --write '*.{md,ts}' 'src/**/*'",
-    "start": "wireit",
-    "test": "prettier --cache --check '*.{md,ts}' 'src/**/*'"
+    "build": "eleventy",
+    "fix": "prettier --cache --write '*.{md,js}' 'src/**/*'",
+    "start": "eleventy --incremental --serve",
+    "test": "prettier --cache --check '*.{md,js}' 'src/**/*'"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0-alpha.13",
-    "@tailwindcss/typography": "^0.5.13",
-    "@tsconfig/node22": "^22.0.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.4",
-    "tsx": "^4.15.6",
-    "typescript": "^5.4.5",
-    "wireit": "^0.14.4"
-  },
-  "wireit": {
-    "build": {
-      "dependencies": [
-        "build:eleventy",
-        "build:tailwind"
-      ]
-    },
-    "build:eleventy": {
-      "command": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
-      "files": [
-        "eleventy.config.ts",
-        "src/**/*.md",
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "src/**/*.json"
-      ],
-      "output": [
-        "_site/**/*.html"
-      ]
-    },
-    "build:tailwind": {
-      "command": "tailwindcss --output _site/main.css",
-      "files": [
-        "tailwind.config.ts",
-        "src/**/*.tsx"
-      ],
-      "output": [
-        "_site/main.css"
-      ]
-    },
-    "start": {
-      "dependencies": [
-        "start:eleventy",
-        "start:tailwind"
-      ]
-    },
-    "start:eleventy": {
-      "command": "tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --incremental --serve",
-      "service": true
-    },
-    "start:tailwind": {
-      "command": "tailwindcss --output _site/main.css --watch",
-      "service": true
-    }
+    "@11ty/eleventy": "^3.0.0",
+    "@shopify/prettier-plugin-liquid": "^1.9.3",
+    "prettier": "^3.5.3"
   },
   "prettier": {
     "plugins": [
-      "prettier-plugin-tailwindcss"
+      "@shopify/prettier-plugin-liquid"
     ]
   }
 }
