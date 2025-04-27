@@ -1,7 +1,6 @@
 ---
-title: West Jersey Proprietors
+layout: page.liquid
+title: West Jesery Proprietors
 ---
 
 # West Jersey Proprietors
-
-Hello world!
