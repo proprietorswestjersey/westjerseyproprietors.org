@@ -10,7 +10,7 @@
     "test": "prettier --cache --check '*.{md,js}' 'src/**/*'"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^3.1.2",
     "@shopify/prettier-plugin-liquid": "^1.9.3",
     "prettier": "^3.5.3"
   },
