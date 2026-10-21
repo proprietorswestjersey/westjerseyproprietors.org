@@ -1,3 +1,3 @@
-_site/
-.wireit/
+.astro/
+dist/
 node_modules/
