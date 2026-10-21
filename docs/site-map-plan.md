@@ -2,14 +2,15 @@
 
 A plan for the pages of westjerseyproprietors.org, built from three sources:
 
-1. **The 1964 pamphlet**, _West Jersey Proprietors and Council of Proprietors_ (Revell Press, Burlington), already transcribed to Markdown.
-2. **External references** collected by family: Bob Barnett's modern-spelling Concessions on westjersey.org, seven New York Times articles (1893–1977), and the New Jersey State Archives' elementary lesson plan.
-3. **Things the pamphlet doesn't cover**: what has happened since 1964, and how to contact the Council.
+1. **The 1964 pamphlet**, _West Jersey Proprietors and Council of Proprietors_ (Revell Press, Burlington), already transcribed to Markdown. The Proprietors wrote it, so we can publish it in full.
+2. **External references** collected by family: the modern-spelling Concessions on [westjersey.org](https://westjersey.org/ca77.htm), seven New York Times articles (1893–1977), and the New Jersey State Archives' elementary lesson plan.
+3. **Things the pamphlet doesn't cover**: what has happened since 1964 (including the current officers), and how to contact the Council.
 
 ## Guiding decisions
 
 - **Two audiences.** Most visitors are curious: a neighbor who watched the noon ceremony in Burlington, a student, a genealogist. A smaller group has real business with the Council: surveyors, title searchers, attorneys, shareholders. The navigation serves the curious group first and gives the business group one clear entry point (**Land & Titles**).
-- **Readable first, original second.** The 1676 Concessions use "Comissioners," "ffreeholders" and "seaventy." Each chapter page opens with a plain-English summary, then the original text. Bob Barnett's easier version gets a link, not a copy, unless he gives permission to reproduce it.
+- **Public only.** No members-only area, logins or shareholder notices.
+- **Readable first, original second.** The 1676 Concessions use "Comissioners," "ffreeholders" and "seaventy." Each chapter page opens with a plain-English summary we write ourselves, then the original text. The easier-to-read version on westjersey.org belongs to someone we don't know, so we link to it and never copy it. The 1676 text itself is long out of copyright, so if we later want our own modern-spelling version, we can make one from the original.
 - **The pamphlet gets split up, not dumped on one page.** Each section of the pamphlet becomes a page (or part of one), and the full transcription lives in the Library with its transcription note.
 - **Link out to copyrighted material.** NYT articles and the state lesson plan are listed with a date, headline and one-line summary, and link to the source. We don't reproduce them.
 - **URLs map straight to Astro files** in `src/pages/`, so `/history/timeline/` is `src/pages/history/timeline.md`.
@@ -66,13 +67,13 @@ Contact goes in the footer. Six items fits a phone menu.
 
 ### About
 
-| Page                       | Content                                                                                                                                                                                                                                                                                                 | Pamphlet source                                                               |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `/about/`                  | What the Proprietors are today, in plain language; how they differ from the government of New Jersey. Links to the four sub-pages.                                                                                                                                                                      | Introduction                                                                  |
-| `/about/council/`          | Nine members (five from Burlington, four from Gloucester) plus the Surveyor General. Officers: president, vice president, clerk, treasurer. Duties: grant the original basis of title, approve surveys, keep records, control acreage warrants.                                                         | "Duties and functions of the Council"; chronology entries for 1687–8 and 1688 |
-| `/about/surveyor-general/` | What the office does. The five-pound fee. Table of every Surveyor General since 1688, **updated past 1963**.                                                                                                                                                                                            | "The Surveyor General" and its table                                          |
-| `/about/propriety/`        | The 100 shares from Byllinge's bankruptcy. The difference between "rights of propriety" (the shares) and "proprietary rights" (acreage warrants). The 1/32 share needed to vote. How shares pass by deed or inheritance. A simple diagram: 1 province half → 100 shares → fractions → warrants → acres. | "A propriety"; 1674–5 note on the Tripartite Indenture                        |
-| `/about/faq/`              | Short answers: Do they own my land? Can I buy a share? Is this a government agency? Why do they meet outdoors? Is it the oldest corporation in the U.S.? (Confirm wording with the Council.)                                                                                                            | Compiled from all of the above                                                |
+| Page                       | Content                                                                                                                                                                                                                                                                                                       | Pamphlet source                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `/about/`                  | What the Proprietors are today, in plain language; how they differ from the government of New Jersey. Links to the four sub-pages.                                                                                                                                                                            | Introduction                                                                  |
+| `/about/council/`          | Nine members (five from Burlington, four from Gloucester) plus the Surveyor General. Officers: president, vice president, clerk, treasurer. **Current officers and members**, from the Proprietors' list. Duties: grant the original basis of title, approve surveys, keep records, control acreage warrants. | "Duties and functions of the Council"; chronology entries for 1687–8 and 1688 |
+| `/about/surveyor-general/` | What the office does. The five-pound fee. Table of every Surveyor General since 1688, **updated past 1963**.                                                                                                                                                                                                  | "The Surveyor General" and its table                                          |
+| `/about/propriety/`        | The 100 shares from Byllinge's bankruptcy. The difference between "rights of propriety" (the shares) and "proprietary rights" (acreage warrants). The 1/32 share needed to vote. How shares pass by deed or inheritance. A simple diagram: 1 province half → 100 shares → fractions → warrants → acres.       | "A propriety"; 1674–5 note on the Tripartite Indenture                        |
+| `/about/faq/`              | Short answers: Do they own my land? Can I buy a share? Is this a government agency? Why do they meet outdoors? Is it the oldest corporation in the U.S.? (Confirm wording with the Council.)                                                                                                                  | Compiled from all of the above                                                |
 
 ### History
 
@@ -87,7 +88,7 @@ Contact goes in the footer. Six items fits a phone menu.
 
 The longest content on the site. Split into four pages along the pamphlet's own section breaks so that no page is enormous.
 
-- **`/concessions/`** (landing page): why the document matters (separation of church and state, trial by jury, secret ballot, open courts, fair dealing with the Lenape). A table of all 44 chapters, each with a one-line plain-English summary and a link to its anchor. Prominent link to Bob Barnett's readable version on westjersey.org. A note on the spelling.
+- **`/concessions/`** (landing page): why the document matters (separation of church and state, trial by jury, secret ballot, open courts, fair dealing with the Lenape). A table of all 44 chapters, each with a one-line plain-English summary and a link to its anchor. A link to the [easier-to-read version on westjersey.org](https://westjersey.org/ca77.htm), labeled as an outside site. A note on the spelling.
 - **`/concessions/commissioners/`**: Chapters 1–12.
 - **`/concessions/charter/`**: Chapters 13–31, the "Charter or fundamental Laws." The highlights for most readers: 16 (liberty of conscience), 17 (jury of twelve), 23 (open courts), 25–26 (relations with the Native people).
 - **`/concessions/assembly/`**: Chapters 32–44.
@@ -108,17 +109,17 @@ On each chapter page, every chapter gets an anchor (`#chapter-16`), a plain-Engl
 - **Gloucester City**, April 13, Gloucester Green, at the site of the old buttonwood tree. Four elected.
 - **Council organizes** on the first Tuesday after the first Monday in May at the Proprietors' office.
 - A map of both sites, photos from recent years, and "visitors welcome?" (confirm).
-- Pull a quote from the NYT "Long on Ceremony, Short on Business" piece, if fair use allows, or just link it.
+- Link to the NYT coverage of past ceremonies on In the News.
 
 ### Library
 
-| Page                      | Content                                                                                                                                                                                                                                                                                       |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/library/`               | Index of everything below.                                                                                                                                                                                                                                                                    |
-| `/library/1964-pamphlet/` | The complete transcription, exactly as in `west-jersey-proprietors.md`, with its transcription note. A link to a PDF of the scan if we can host it. A note that the 1964 text is a historical document and some facts (the Surveyor General list, fees) have changed.                         |
-| `/library/in-the-news/`   | NYT articles listed newest first (table below).                                                                                                                                                                                                                                               |
-| `/library/for-teachers/`  | The NJ State Archives lesson plan, "It Happened Here: West Jersey" ([PDF](https://nj.gov/state/historical/assets/pdf/it-happened-here/ihhnj-er-west-jersey.pdf)). Suggested classroom hooks: compare Chapter 16 to the First Amendment; Chapter 33's ballot boxes; Chapter 25's mixed juries. |
-| `/library/sources/`       | The pamphlet's ten citations (Whitehead's N.J.A., Pomfret 1956, Leaming & Spicer), formatted as a bibliography, plus westjersey.org and other web resources.                                                                                                                                  |
+| Page                      | Content                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/library/`               | Index of everything below.                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `/library/1964-pamphlet/` | The complete transcription, exactly as in `west-jersey-proprietors.md`, with its transcription note. A PDF of the scan for download (the Proprietors wrote it, so we can host it). A note that the 1964 text is a historical document and some facts (the Surveyor General list, fees) have changed.                                                                                                                          |
+| `/library/in-the-news/`   | NYT articles listed newest first (table below).                                                                                                                                                                                                                                                                                                                                                                               |
+| `/library/for-teachers/`  | The NJ State Archives lesson plan, "It Happened Here: West Jersey" ([PDF](https://nj.gov/state/historical/assets/pdf/it-happened-here/ihhnj-er-west-jersey.pdf)). Suggested classroom hooks: compare Chapter 16 to the First Amendment; Chapter 33's ballot boxes; Chapter 25's mixed juries.                                                                                                                                 |
+| `/library/sources/`       | The pamphlet's ten citations (Whitehead's N.J.A., Pomfret 1956, Leaming & Spicer), formatted as a bibliography. Web resources: westjersey.org's [Concessions](https://westjersey.org/ca77.htm) and [Council](https://westjersey.org/wjh_copowj.htm) pages, and the NJ State Archives, which has held the Proprietors' records since December 2005 ([finding aid PDF](https://www.nj.gov/state/archives/pdf/proprietors.pdf)). |
 
 **In the News** (headlines and summaries to fill in after reading each article):
 
@@ -157,15 +158,19 @@ Mailing address of the Proprietors' office in Burlington, who to contact for sur
 | Attestation                         | Concessions: Signatures                            |
 | Whole pamphlet                      | Library, 1964 Pamphlet                             |
 
-## Open questions for the Council or family
+## Decisions made
 
-1. **Permission from Bob Barnett** to reproduce his modern-spelling Concessions, or only link to it? And the exact URL of that page.
-2. **Copyright of the 1964 pamphlet.** Revell Press, 1964. If it carried no copyright notice it is likely public domain; otherwise the Council may need to grant permission.
-3. **The "Long on Ceremony, Short on Business" article**: date and URL.
-4. **What's changed since 1964**: Surveyor Generals after William H. Taylor, current officers, whether the five-pound fee or the meeting dates have changed, and whether the Council still approves new surveys.
-5. **Contact details** the Council is willing to publish.
-6. **Images**: the scanned pamphlet, its cover art, the manuscript facsimiles (pp. 8, 30–33), photos of the ceremony sites and markers, and a map of the province line.
-7. **Shareholders area?** Is a members-only section needed (meeting minutes, notices), or is the site purely public? The plan above assumes public only.
+- **westjersey.org**: we don't know its author, so we link to it and don't copy it.
+- **1964 pamphlet**: written by the Proprietors, so we publish it in full, scan included.
+- **Current officers**: the Proprietors have a list; it goes on the Council page.
+- **Audience**: public only.
+
+## Still open
+
+1. **"Long on Ceremony, Short on Business."** This was the one item in the email that came through as a title with no link. It's probably the headline of another NYT article about the Proprietors. If the email has a link behind that text, please send it; otherwise we leave it off until someone finds it.
+2. **Other changes since 1964**: Surveyor Generals after William H. Taylor, whether the five-pound fee or the meeting dates have changed, and whether the Council still approves new surveys.
+3. **Contact details** the Council is willing to publish.
+4. **Images**: the scanned pamphlet, its cover art, the manuscript facsimiles (pp. 8, 30–33), photos of the ceremony sites and markers, and a map of the province line. Which do we have, and are there photos from recent ceremonies?
 
 ## Suggested build order
 
