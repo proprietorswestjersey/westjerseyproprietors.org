@@ -1,5 +1,5 @@
 ---
-layout: page.liquid
+layout: ../layouts/Page.astro
 title: West Jesery Proprietors
 ---
 
