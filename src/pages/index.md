@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/Page.astro
-title: West Jesery Proprietors
+title: West Jersey Proprietors
 ---
 
 # West Jersey Proprietors
