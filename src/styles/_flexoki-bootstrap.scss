@@ -1,0 +1,135 @@
+// Flexoki for Bootstrap
+//
+// Maps Bootstrap's semantic colors onto Flexoki's tokens. Bootstrap's own palette
+// is removed, so everything here reads from the --flexoki-* tokens.
+
+// Remove Bootstrap's palette. Its colors module emits the Flexoki tokens instead.
+$colors: (
+  "blue": null,
+  "indigo": null,
+  "violet": null,
+  "purple": null,
+  "pink": null,
+  "red": null,
+  "orange": null,
+  "amber": null,
+  "yellow": null,
+  "lime": null,
+  "green": null,
+  "teal": null,
+  "cyan": null,
+  "brown": null,
+  "gray": null,
+  "pewter": null,
+);
+
+// Theme colors
+//
+// Text uses Flexoki's accent token. Fills use the 600 shade in both modes so
+// paper text stays legible on them.
+@function theme-color($accent, $hue) {
+  @return (
+    "base": var(--flexoki-#{$hue}-600),
+    "fg": var(--flexoki-#{$accent}),
+    "fg-emphasis": light-dark(
+        var(--flexoki-#{$hue}-800),
+        var(--flexoki-#{$hue}-200)
+      ),
+    "bg": var(--flexoki-#{$hue}-600),
+    "bg-subtle": light-dark(
+        var(--flexoki-#{$hue}-100),
+        var(--flexoki-#{$hue}-900)
+      ),
+    "bg-muted": light-dark(
+        var(--flexoki-#{$hue}-200),
+        var(--flexoki-#{$hue}-800)
+      ),
+    "border": light-dark(var(--flexoki-#{$hue}-300), var(--flexoki-#{$hue}-600)),
+    "focus-ring": light-dark(
+        color-mix(in oklch, var(--flexoki-#{$hue}-500) 50%, var(--bg-body)),
+        color-mix(in oklch, var(--flexoki-#{$hue}-500) 75%, var(--bg-body))
+      ),
+    "contrast": var(--flexoki-paper)
+  );
+}
+
+// Flexoki uses cyan for links and active states, red for errors, orange for
+// warnings, and green for success.
+$theme-colors: (
+  "primary": theme-color("cy", "cyan"),
+  "accent": theme-color("ma", "magenta"),
+  "success": theme-color("gr", "green"),
+  "danger": theme-color("re", "red"),
+  "warning": theme-color("or", "orange"),
+  "info": theme-color("bl", "blue"),
+  "inverse": (
+    "base": var(--flexoki-900),
+    "fg": light-dark(var(--flexoki-900), var(--flexoki-200)),
+    "fg-emphasis": light-dark(var(--flexoki-black), var(--flexoki-paper)),
+    "bg": light-dark(var(--flexoki-900), var(--flexoki-50)),
+    "bg-subtle": light-dark(var(--flexoki-100), var(--flexoki-900)),
+    "bg-muted": light-dark(var(--flexoki-200), var(--flexoki-300)),
+    "border": light-dark(var(--flexoki-400), var(--flexoki-100)),
+    "focus-ring": color-mix(
+        in oklch,
+        light-dark(var(--flexoki-900), var(--flexoki-100)) 50%,
+        var(--bg-body)
+      ),
+    "contrast": light-dark(var(--flexoki-paper), var(--flexoki-900)),
+  ),
+  "secondary": (
+    "base": var(--flexoki-200),
+    "fg": var(--flexoki-tx-2),
+    "fg-emphasis": light-dark(var(--flexoki-800), var(--flexoki-200)),
+    "bg": light-dark(var(--flexoki-100), var(--flexoki-800)),
+    "bg-subtle": var(--flexoki-bg-2),
+    "bg-muted": var(--flexoki-ui),
+    "border": light-dark(var(--flexoki-300), var(--flexoki-600)),
+    "focus-ring": color-mix(
+        in oklch,
+        light-dark(var(--flexoki-500), var(--flexoki-300)) 50%,
+        var(--bg-body)
+      ),
+    "contrast": var(--flexoki-tx),
+  ),
+);
+
+// Backgrounds, foregrounds, and borders follow Flexoki's base colors. The 1 and 3
+// foregrounds fill the gaps between tx, tx-2, and tx-3.
+$theme-bgs: (
+  "body": var(--flexoki-bg),
+  "1": var(--flexoki-bg-2),
+  "2": var(--flexoki-ui),
+  "3": var(--flexoki-ui-2),
+  "4": var(--flexoki-ui-3),
+);
+
+$theme-fgs: (
+  "body": var(--flexoki-tx),
+  "1": light-dark(var(--flexoki-800), var(--flexoki-300)),
+  "2": var(--flexoki-tx-2),
+  "3": light-dark(var(--flexoki-500), var(--flexoki-600)),
+  "4": var(--flexoki-tx-3),
+);
+
+$theme-borders: (
+  "body": var(--flexoki-ui-3),
+  "muted": var(--flexoki-ui-2),
+  "subtle": var(--flexoki-ui),
+  "emphasized": var(--flexoki-tx-3),
+);
+
+$root-tokens: (
+  --black: var(--flexoki-black),
+  --white: var(--flexoki-paper),
+  --border-color: var(--border-muted),
+);
+
+// Bootstrap components that reference its palette directly.
+$prose-tokens: (
+  --heading-color: var(--flexoki-tx),
+);
+
+$reboot-mark-tokens: (
+  --mark-bg: light-dark(var(--flexoki-yellow-100), var(--flexoki-yellow-900)),
+);

@@ -9,45 +9,47 @@
 
 // Configuration
 
-// Flexoki palette and its mapping onto Bootstrap's tokens.
+// Flexoki's palette and semantic colors, and their mapping onto Bootstrap.
 @use "flexoki";
+@use "flexoki-bootstrap";
 
 // Feature flags, spacers, sizes, font sizes and weights, etc. For example:
 // @use "bootstrap/scss/config" with ($enable-shadows: false);
 @use "bootstrap/scss/config";
 
-// Base color palette. Each color generates a 025-975 scale (--blue-500, etc.).
-// Flexoki replaces the palette and sets the exact value of each stop.
+// Base color palette. Bootstrap's palette is replaced by Flexoki's tokens.
 @use "bootstrap/scss/colors" with (
-  $white: flexoki.$paper,
-  $black: flexoki.$black,
-  $colors: flexoki.$colors,
-  $color-tokens: flexoki.$color-tokens
+  $colors: flexoki-bootstrap.$colors,
+  $color-tokens: flexoki.$tokens
 );
 
-// Semantic theme colors (primary, accent, success, etc.) built from the palette,
-// plus the background, foreground, and border colors.
+// Semantic theme colors (primary, accent, success, etc.) and the background,
+// foreground, and border colors, built from Flexoki's tokens.
 @use "bootstrap/scss/theme" with (
-  $theme-colors: flexoki.$theme-colors,
-  $theme-bgs: flexoki.$theme-bgs,
-  $theme-fgs: flexoki.$theme-fgs,
-  $theme-borders: flexoki.$theme-borders
+  $theme-colors: flexoki-bootstrap.$theme-colors,
+  $theme-bgs: flexoki-bootstrap.$theme-bgs,
+  $theme-fgs: flexoki-bootstrap.$theme-fgs,
+  $theme-borders: flexoki-bootstrap.$theme-borders
 );
 
 // Global CSS custom properties, including fonts. For example:
 // --body-font-family: "'Custom Font', serif",
 @use "bootstrap/scss/root" with (
-  $root-tokens: flexoki.$root-tokens
+  $root-tokens: flexoki-bootstrap.$root-tokens
 );
 
 // Content
 
-@use "bootstrap/scss/content/reboot";
+@use "bootstrap/scss/content/reboot" with (
+  $reboot-mark-tokens: flexoki-bootstrap.$reboot-mark-tokens
+);
 @use "bootstrap/scss/content/lists";
 @use "bootstrap/scss/content/blockquote";
 @use "bootstrap/scss/content/tables";
 @use "bootstrap/scss/content/images";
-@use "bootstrap/scss/content/prose";
+@use "bootstrap/scss/content/prose" with (
+  $prose-tokens: flexoki-bootstrap.$prose-tokens
+);
 
 // Layout
 
@@ -124,3 +126,25 @@
 // Utilities
 
 @use "bootstrap/scss/utilities/api";
+
+// Flexoki
+
+// Avatar status colors reference Bootstrap's palette directly.
+@layer custom {
+  .avatar-status,
+  .avatar-status.status-offline {
+    background-color: var(--flexoki-tx-3);
+  }
+
+  .avatar-status.status-online {
+    background-color: var(--flexoki-gr);
+  }
+
+  .avatar-status.status-busy {
+    background-color: var(--flexoki-re);
+  }
+
+  .avatar-status.status-away {
+    background-color: var(--flexoki-ye);
+  }
+}
