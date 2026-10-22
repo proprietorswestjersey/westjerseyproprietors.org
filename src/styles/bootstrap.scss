@@ -9,27 +9,35 @@
 
 // Configuration
 
+// Flexoki palette and its mapping onto Bootstrap's tokens.
+@use "flexoki";
+
 // Feature flags, spacers, sizes, font sizes and weights, etc. For example:
 // @use "bootstrap/scss/config" with ($enable-shadows: false);
 @use "bootstrap/scss/config";
 
 // Base color palette. Each color generates a 025-975 scale (--blue-500, etc.).
-// For example:
-// @use "bootstrap/scss/colors" with ($blue: oklch(60% 0.24 240));
-@use "bootstrap/scss/colors";
-
-// Semantic theme colors (primary, accent, success, etc.) built from the palette.
-@use "bootstrap/scss/theme" with (
-  $theme-colors: (
-    // "primary": ("base": var(--blue-500)),
-  )
+// Flexoki replaces the palette and sets the exact value of each stop.
+@use "bootstrap/scss/colors" with (
+  $white: flexoki.$paper,
+  $black: flexoki.$black,
+  $colors: flexoki.$colors,
+  $color-tokens: flexoki.$color-tokens
 );
 
-// Global CSS custom properties, including fonts.
+// Semantic theme colors (primary, accent, success, etc.) built from the palette,
+// plus the background, foreground, and border colors.
+@use "bootstrap/scss/theme" with (
+  $theme-colors: flexoki.$theme-colors,
+  $theme-bgs: flexoki.$theme-bgs,
+  $theme-fgs: flexoki.$theme-fgs,
+  $theme-borders: flexoki.$theme-borders
+);
+
+// Global CSS custom properties, including fonts. For example:
+// --body-font-family: "'Custom Font', serif",
 @use "bootstrap/scss/root" with (
-  $root-tokens: (
-    // --body-font-family: "'Custom Font', serif",
-  )
+  $root-tokens: flexoki.$root-tokens
 );
 
 // Content
